@@ -207,29 +207,28 @@ data_cleaned = data.dropna()
 data_cleaned.set_index('Date', inplace=True)
 
 # Plot the original data
-# plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Rows containing missing data removed)")
+plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Rows containing missing data removed)")
 
 
 # Remove outliers from the dataset
 data_cleaned = remove_outliers(data_cleaned, data_cleaned.columns)
 
 # Plot the data with outliers removed
-# plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Outliers removed))")
+plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Outliers removed))")
 
 
 # remove the seasonal trend
 data_cleaned = calculate_rolling_average(data_cleaned, 15)
 
 # Plot the data with seasonal trend removed
-# plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Seasonality Removed)")
+plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Seasonality Removed)")
 
 
 # Apply min-max scaling to the entire dataset
 data_cleaned = data_cleaned.apply(min_max_scaling)
 
 # Plot the normalized data
-# plot_data(data_cleaned,
-#           "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Min max scaling applied)")
+plot_data(data_cleaned, "Plot of daily environmental factors at a site in San Diego, USA; 1/1/1987 - 31/12/1990 (Min max scaling applied)")
 
 
 # Remove any rows with invalid values
@@ -238,8 +237,8 @@ data_cleaned = data_cleaned.dropna()
 
 # Calculate correlations for each predictor with PanE (the predictant)
 # strong_correlations = calculate_correlations(data_cleaned, 'PanE')
-# print("Predictors with correlation coefficient greater than 0.5:")
-# print(strong_correlations)
+print("Predictors with correlation coefficient greater than 0.5:")
+print(strong_correlations)
 
 
 # Split the data into calibration, testing, and validation sets with a ratio of 60:20:20
