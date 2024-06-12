@@ -1,6 +1,23 @@
 # Multi level perceptron neural network
 ### _Neural network model built to model pan evaporation at a site in San Diego, USA (1987-1990)_
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Data Pre-processing](#data-pre-processing)
+  - [Handling Non-Numeric & Missing Values](#handling-non-numeric--missing-values)
+  - [Outlier Removal](#outlier-removal)
+  - [Seasonality Removal](#seasonality-removal)
+  - [Data Normalization](#data-normalization)
+  - [Identifying Relevant Predictors](#identifying-relevant-predictors)
+  - [Data Splitting](#data-splitting)
+- [Multi Layer Perceptron Implementation](#multi-layer-perceptron-implementation)
+  - [Network Structure](#network-structure)
+  - [Technologies and Libraries](#technologies-and-libraries)
+  - [Backpropagation Implementation](#backpropagation-implementation)
+  - [Network Training](#network-training)
+  - [Network Evaluation](#network-evaluation)
+
 ## Introduction
 Given a set of data monitoring environmental factors at a site in San Diego, the aim of this project is to produce a neural network without any machine learning libraries capable of making predictions for pan evaportaion given the set of input variables. This project was completed as part of my coursework for my 2nd year AI methods module at University.
 
